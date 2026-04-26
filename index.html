@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -802,9 +803,12 @@
     });
   }
 
-  /* ── Gmail SMTP via Google Apps Script ──────────── */
-  // ⚠️  Paste your deployed Web App URL here (see Code.gs for setup steps)
-  var GAS_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+  /* ── Gmail SMTP via EmailJS ──────────────────────── */
+  // Paste your 3 values from emailjs.com — that's all the setup needed
+  var EJS_KEY      = "YOUR_PUBLIC_KEY";   // Account → General → Public Key
+  var EJS_SERVICE  = "YOUR_SERVICE_ID";   // Email Services → your Gmail service
+  var EJS_TEMPLATE = "YOUR_TEMPLATE_ID";  // Email Templates → your template
+  emailjs.init({ publicKey: EJS_KEY });
 
   /* ── Form submit ─────────────────────────────── */
   window.handleSubmit = function (e) {
@@ -848,20 +852,17 @@
     icon.classList.add("hidden");
     spinner.classList.remove("hidden");
 
-    // POST to Google Apps Script → sends via Gmail SMTP
-    fetch(GAS_URL, {
-      method: "POST",
-      mode:   "no-cors",  // GAS uses an internal redirect; no-cors lets it through
-      body:   JSON.stringify({
-        customer_name:  name,
-        customer_email: email,
-        customer_phone: phone,
-        registration:   reg,
-        booking_date:   dateStr,
-        booking_time:   selTime,
-        services:       selServices.join(", "),
-        notes:          notes || "–"
-      })
+    // Send via EmailJS → Gmail SMTP
+    emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+      customer_name:  name,
+      customer_email: email,
+      customer_phone: phone,
+      registration:   reg,
+      booking_date:   dateStr,
+      booking_time:   selTime,
+      services:       selServices.join(", "),
+      notes:          notes || "–",
+      reply_to:       email
     }).then(function () {
       document.getElementById("success-msg").textContent =
         name + ", your request for " + dateStr + " at " + selTime + " has been received.";
