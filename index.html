@@ -187,6 +187,21 @@
       100% { background-position: 400px 0; }
     }
 
+    /* ── Language selector ────────────────── */
+    #lang-menu {
+      display: none; position: absolute; right: 0; top: calc(100% + 6px);
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1); overflow: hidden; min-width: 130px; z-index: 99;
+    }
+    #lang-menu.open { display: block; animation: fadeUp 0.2s ease forwards; opacity: 1; }
+    .lang-opt {
+      display: flex; align-items: center; gap: 8px; padding: 9px 14px;
+      font-size: 13px; font-weight: 500; cursor: pointer; color: #374151;
+      transition: background 0.15s;
+    }
+    .lang-opt:hover { background: #f1f5f9; }
+    .lang-opt.active { color: #0043c8; font-weight: 700; }
+
     /* ── Page scroll progress bar ─────────── */
     #scroll-bar {
       position: fixed; top: 0; left: 0; height: 3px; width: 0%;
@@ -236,7 +251,19 @@
     </div>
 
     <div class="flex items-center gap-2 sm:gap-3">
-      <a href="#booking" class="bg-primary text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg hover:bg-primary-container active:scale-[0.97] transition-all">
+      <!-- Language selector -->
+      <div class="relative hidden sm:block">
+        <button id="lang-btn" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors text-sm font-medium" aria-label="Select language">
+          <span id="lang-flag" class="text-base">🇬🇧</span>
+          <span id="lang-code" class="text-xs font-bold tracking-wide">EN</span>
+          <span class="material-symbols-outlined text-slate-400" style="font-size:16px;vertical-align:middle">expand_more</span>
+        </button>
+        <div id="lang-menu" role="menu">
+          <div class="lang-opt active" data-lang="en" role="menuitem">🇬🇧 English</div>
+          <div class="lang-opt" data-lang="sv" role="menuitem">🇸🇪 Svenska</div>
+        </div>
+      </div>
+      <a href="#booking" class="bg-primary text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg hover:bg-primary-container active:scale-[0.97] transition-all" data-i18n="nav_book">
         Book Service
       </a>
       <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle menu">
@@ -281,20 +308,20 @@
 
   <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
     <div class="max-w-xl lg:max-w-2xl">
-      <span class="hero-line delay-1 inline-block px-3 sm:px-4 py-1.5 bg-primary-fixed text-on-primary-fixed-variant font-bold text-[10px] sm:text-xs tracking-widest rounded-full mb-4 sm:mb-6 uppercase">
+      <span class="hero-line delay-1 inline-block px-3 sm:px-4 py-1.5 bg-primary-fixed text-on-primary-fixed-variant font-bold text-[10px] sm:text-xs tracking-widest rounded-full mb-4 sm:mb-6 uppercase" data-i18n="hero_badge">
         Established Expertise in Bromma
       </span>
-      <h1 class="hero-line delay-2 text-[42px] sm:text-6xl lg:text-[70px] font-extrabold leading-[1.08] tracking-tight text-on-surface mb-4 sm:mb-6">
-        Clinical Precision<br/>for Your Vehicle.
+      <h1 class="hero-line delay-2 text-[42px] sm:text-6xl lg:text-[70px] font-extrabold leading-[1.08] tracking-tight text-on-surface mb-4 sm:mb-6" data-i18n="hero_title">
+        Your Car Deserves<br/>Expert Care.
       </h1>
-      <p class="hero-line delay-3 text-base sm:text-lg text-on-surface-variant max-w-md leading-relaxed mb-8 sm:mb-10">
-        Experience Swedish functionalism applied to automotive care. Transparent diagnostics and expert repairs for Stockholm's most discerning drivers.
+      <p class="hero-line delay-3 text-base sm:text-lg text-on-surface-variant max-w-md leading-relaxed mb-8 sm:mb-10" data-i18n="hero_sub">
+        Fast, honest, and professional service in the heart of Bromma. Book online in seconds — we come back to confirm your slot.
       </p>
       <div class="hero-line delay-4 flex flex-col sm:flex-row gap-3">
-        <a href="#booking" class="btn-ripple bg-primary text-white text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all text-center">
+        <a href="#booking" class="btn-ripple bg-primary text-white text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all text-center" data-i18n="hero_cta_primary">
           Book Now
         </a>
-        <a href="#services" class="border border-outline-variant text-on-surface text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-surface-container transition-all text-center">
+        <a href="#services" class="border border-outline-variant text-on-surface text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-surface-container transition-all text-center" data-i18n="hero_cta_secondary">
           View Services
         </a>
       </div>
@@ -1012,6 +1039,67 @@
     document.getElementById("booking-success").classList.add("hidden");
     renderCal(); renderServices(); renderSlots();
   };
+
+  /* ── i18n strings ────────────────────────────── */
+  var STRINGS = {
+    en: {
+      hero_badge:         "Established Expertise in Bromma",
+      hero_title:         "Your Car Deserves<br/>Expert Care.",
+      hero_sub:           "Fast, honest, and professional service in the heart of Bromma. Book online in seconds — we come back to confirm your slot.",
+      hero_cta_primary:   "Book Now",
+      hero_cta_secondary: "View Services",
+      nav_book:           "Book Service"
+    },
+    sv: {
+      hero_badge:         "Gedigen Expertis i Bromma",
+      hero_title:         "Din Bil Förtjänar<br/>Experthjälp.",
+      hero_sub:           "Snabb, ärlig och professionell service i hjärtat av Bromma. Boka online på sekunder — vi återkommer för att bekräfta din tid.",
+      hero_cta_primary:   "Boka Nu",
+      hero_cta_secondary: "Visa Tjänster",
+      nav_book:           "Boka Service"
+    }
+  };
+
+  function applyLang(lang) {
+    var s = STRINGS[lang] || STRINGS.en;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (s[key] !== undefined) el.innerHTML = s[key];
+    });
+    // update lang button
+    var isEn = lang === "en";
+    document.getElementById("lang-flag").textContent = isEn ? "🇬🇧" : "🇸🇪";
+    document.getElementById("lang-code").textContent  = isEn ? "EN"   : "SV";
+    document.querySelectorAll(".lang-opt").forEach(function (opt) {
+      opt.classList.toggle("active", opt.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("bil_lang", lang); } catch(e) {}
+  }
+
+  /* ── Language switcher ───────────────────────── */
+  var langBtn  = document.getElementById("lang-btn");
+  var langMenu = document.getElementById("lang-menu");
+
+  langBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    langMenu.classList.toggle("open");
+  });
+  document.addEventListener("click", function () { langMenu.classList.remove("open"); });
+  document.querySelectorAll(".lang-opt").forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      applyLang(opt.dataset.lang);
+      langMenu.classList.remove("open");
+    });
+  });
+
+  // Detect browser language on first load
+  (function () {
+    var saved   = "";
+    try { saved = localStorage.getItem("bil_lang") || ""; } catch(e) {}
+    var browser = (navigator.language || "en").toLowerCase().startsWith("sv") ? "sv" : "en";
+    applyLang(saved || browser);
+  }());
 
   /* ── Init ────────────────────────────────────── */
   renderCal();
