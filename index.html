@@ -284,9 +284,15 @@
       <a href="#about"    onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_about">About</a>
       <a href="#booking"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_book">Book Service</a>
       <a href="#contact"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_contact">Contact</a>
-      <div class="mt-2 pt-3 border-t border-slate-100 px-4">
-        <p class="text-xs text-slate-500">Muhammad Rumaan</p>
-        <a href="tel:+46793447833" class="text-primary font-semibold text-sm">+46 79-344 78 33</a>
+      <div class="mt-2 pt-3 border-t border-slate-100 px-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs text-slate-500">Muhammad Rumaan</p>
+          <a href="tel:+46793447833" class="text-primary font-semibold text-sm">+46 79-344 78 33</a>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="applyLang('en');closeMob();" class="mob-lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all" data-mob-lang="en">🇬🇧 EN</button>
+          <button onclick="applyLang('sv');closeMob();" class="mob-lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all" data-mob-lang="sv">🇸🇪 SV</button>
+        </div>
       </div>
     </div>
   </div>
@@ -763,6 +769,7 @@
   function openMob()  { mobMenu.classList.add("open");    iconOpen.classList.add("hidden");    iconClose.classList.remove("hidden"); }
   function closeMob() { mobMenu.classList.remove("open"); iconOpen.classList.remove("hidden"); iconClose.classList.add("hidden"); }
   window.closeMob = closeMob;
+  window.applyLang = function (lang) { applyLang(lang); };
 
   toggle.addEventListener("click", function () {
     mobMenu.classList.contains("open") ? closeMob() : openMob();
@@ -1250,6 +1257,12 @@
     document.getElementById("lang-code").textContent  = isEn ? "EN"   : "SV";
     document.querySelectorAll(".lang-opt").forEach(function (opt) {
       opt.classList.toggle("active", opt.dataset.lang === lang);
+    });
+    // update mobile lang buttons
+    document.querySelectorAll(".mob-lang-btn").forEach(function (btn) {
+      var active = btn.dataset.mobLang === lang;
+      btn.className = "mob-lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all " +
+        (active ? "border-primary bg-primary text-white" : "border-slate-200 text-slate-600 hover:bg-slate-50");
     });
     document.documentElement.lang = lang;
     try { localStorage.setItem("bil_lang", lang); } catch(e) {}
