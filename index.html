@@ -244,10 +244,10 @@
 
     <!-- Desktop links -->
     <div class="hidden md:flex items-center gap-6 lg:gap-8">
-      <a href="#services" class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors">Services</a>
-      <a href="#about"    class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors">About</a>
-      <a href="#booking"  class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors">Book</a>
-      <a href="#contact"  class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors">Contact</a>
+      <a href="#services" class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors" data-i18n="nav_services">Services</a>
+      <a href="#about"    class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors" data-i18n="nav_about">About</a>
+      <a href="#booking"  class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors" data-i18n="nav_book_link">Book</a>
+      <a href="#contact"  class="text-sm text-slate-600 font-medium hover:text-blue-600 transition-colors" data-i18n="nav_contact">Contact</a>
     </div>
 
     <div class="flex items-center gap-2 sm:gap-3">
@@ -280,10 +280,10 @@
   <!-- Mobile dropdown -->
   <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100">
     <div class="px-4 py-3 flex flex-col">
-      <a href="#services" onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">Services</a>
-      <a href="#about"    onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">About</a>
-      <a href="#booking"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">Book Service</a>
-      <a href="#contact"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">Contact</a>
+      <a href="#services" onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_services">Services</a>
+      <a href="#about"    onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_about">About</a>
+      <a href="#booking"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_book">Book Service</a>
+      <a href="#contact"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm" data-i18n="nav_contact">Contact</a>
       <div class="mt-2 pt-3 border-t border-slate-100 px-4">
         <p class="text-xs text-slate-500">Muhammad Rumaan</p>
         <a href="tel:+46793447833" class="text-primary font-semibold text-sm">+46 79-344 78 33</a>
@@ -336,10 +336,10 @@
 <section class="bg-white border-y border-slate-100 py-6 sm:py-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 text-center">
-      <div class="reveal"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">15+</p><p class="text-xs sm:text-sm text-slate-500 mt-1">Years Experience</p></div>
-      <div class="reveal" style="transition-delay:.1s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">2,400+</p><p class="text-xs sm:text-sm text-slate-500 mt-1">Vehicles Serviced</p></div>
-      <div class="reveal" style="transition-delay:.2s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">4.9&#9733;</p><p class="text-xs sm:text-sm text-slate-500 mt-1">Customer Rating</p></div>
-      <div class="reveal" style="transition-delay:.3s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">100%</p><p class="text-xs sm:text-sm text-slate-500 mt-1">OEM Certified</p></div>
+      <div class="reveal"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">15+</p><p class="text-xs sm:text-sm text-slate-500 mt-1" data-i18n="stat_years">Years Experience</p></div>
+      <div class="reveal" style="transition-delay:.1s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">2,400+</p><p class="text-xs sm:text-sm text-slate-500 mt-1" data-i18n="stat_vehicles">Vehicles Serviced</p></div>
+      <div class="reveal" style="transition-delay:.2s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">4.9&#9733;</p><p class="text-xs sm:text-sm text-slate-500 mt-1" data-i18n="stat_rating">Customer Rating</p></div>
+      <div class="reveal" style="transition-delay:.3s"><p class="stat-num text-2xl sm:text-3xl font-extrabold text-primary">100%</p><p class="text-xs sm:text-sm text-slate-500 mt-1" data-i18n="stat_oem">OEM Certified</p></div>
     </div>
   </div>
 </section>
@@ -353,8 +353,8 @@
 
     <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-14 gap-4">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-on-surface mb-2 sm:mb-3">Specialized Services</h2>
-        <p class="text-on-surface-variant text-sm sm:text-base max-w-md">Our workshop is calibrated for high-performance maintenance and technical diagnostics.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-on-surface mb-2 sm:mb-3" data-i18n="svc_heading">Specialized Services</h2>
+        <p class="text-on-surface-variant text-sm sm:text-base max-w-md" data-i18n="svc_sub">Our workshop is calibrated for high-performance maintenance and technical diagnostics.</p>
       </div>
       <div class="flex gap-2 reveal">
         <div class="w-10 h-1 bg-primary rounded-full"></div>
@@ -369,11 +369,11 @@
         <div class="svc-icon w-12 h-12 sm:w-14 sm:h-14 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6 sm:mb-8">
           <span class="material-symbols-outlined text-2xl sm:text-3xl">troubleshoot</span>
         </div>
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Diagnostics</h3>
-        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6">Advanced computer analysis to identify core issues with surgical accuracy before any work begins.</p>
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" data-i18n="svc_diag_title">Diagnostics</h3>
+        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6" data-i18n="svc_diag_desc">Advanced computer analysis to identify core issues with surgical accuracy before any work begins.</p>
         <ul class="space-y-2 text-sm font-semibold text-on-surface-variant">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>ECU Programming</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Sensor Calibration</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_diag_1">ECU Programming</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_diag_2">Sensor Calibration</span></li>
         </ul>
       </div>
 
@@ -381,11 +381,11 @@
         <div class="svc-icon w-12 h-12 sm:w-14 sm:h-14 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6 sm:mb-8">
           <span class="material-symbols-outlined text-2xl sm:text-3xl">build</span>
         </div>
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Repair</h3>
-        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6">Master technician-led mechanical repairs using OEM parts to ensure your vehicle's structural integrity.</p>
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" data-i18n="svc_repair_title">Repair</h3>
+        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6" data-i18n="svc_repair_desc">Master technician-led mechanical repairs using OEM parts to ensure your vehicle's structural integrity.</p>
         <ul class="space-y-2 text-sm font-semibold text-on-surface-variant">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Engine Overhaul</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Brake Systems</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_repair_1">Engine Overhaul</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_repair_2">Brake Systems</span></li>
         </ul>
       </div>
 
@@ -393,11 +393,11 @@
         <div class="svc-icon w-12 h-12 sm:w-14 sm:h-14 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6 sm:mb-8">
           <span class="material-symbols-outlined text-2xl sm:text-3xl">calendar_today</span>
         </div>
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Maintenance</h3>
-        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6">Preventative care schedules designed to maximize vehicle longevity and maintain manufacturer warranties.</p>
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3" data-i18n="svc_maint_title">Maintenance</h3>
+        <p class="text-on-surface-variant text-sm sm:text-base mb-4 sm:mb-6" data-i18n="svc_maint_desc">Preventative care schedules designed to maximize vehicle longevity and maintain manufacturer warranties.</p>
         <ul class="space-y-2 text-sm font-semibold text-on-surface-variant">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Seasonal Service</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Fluid Optimization</li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_maint_1">Seasonal Service</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span><span data-i18n="svc_maint_2">Fluid Optimization</span></li>
         </ul>
       </div>
 
@@ -428,9 +428,9 @@
       </div>
 
       <div class="pt-8 sm:pt-0 reveal" style="transition-delay:.15s">
-        <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 block">Our Foundation</span>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-5 sm:mb-7">Guided by Mastery</h2>
-        <p class="text-base sm:text-lg text-on-surface-variant mb-6 sm:mb-8 leading-relaxed">
+        <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 block" data-i18n="about_badge">Our Foundation</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-5 sm:mb-7" data-i18n="about_heading">Guided by Mastery</h2>
+        <p class="text-base sm:text-lg text-on-surface-variant mb-6 sm:mb-8 leading-relaxed" data-i18n="about_body">
           Bil Expert Bromma was founded on the principle that transparency is the most important tool in a workshop.
           Under the leadership of <strong class="text-on-surface">Muhammad Rumaan</strong>, we've built a reputation for solving the unsolvable.
         </p>
@@ -440,8 +440,8 @@
               <span class="material-symbols-outlined text-lg">person</span>
             </div>
             <div>
-              <p class="font-semibold text-sm text-on-surface">Lead Technician</p>
-              <p class="text-on-surface-variant text-sm sm:text-base">Muhammad Rumaan</p>
+              <p class="font-semibold text-sm text-on-surface" data-i18n="about_tech">Lead Technician</p>
+              <p class="text-on-surface-variant text-sm sm:text-base" data-i18n="about_tech_name">Muhammad Rumaan</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -449,7 +449,7 @@
               <span class="material-symbols-outlined text-lg">call</span>
             </div>
             <div>
-              <p class="font-semibold text-sm text-on-surface">Direct Line</p>
+              <p class="font-semibold text-sm text-on-surface" data-i18n="about_phone_label">Direct Line</p>
               <a href="tel:+46793447833" class="text-primary font-semibold hover:underline text-sm sm:text-base">+46 79-344 78 33</a>
             </div>
           </div>
@@ -458,8 +458,8 @@
               <span class="material-symbols-outlined text-lg">location_on</span>
             </div>
             <div>
-              <p class="font-semibold text-sm text-on-surface">Workshop</p>
-              <p class="text-on-surface-variant text-sm sm:text-base">Drottningholmsvägen 300, 167 31 Bromma</p>
+              <p class="font-semibold text-sm text-on-surface" data-i18n="about_address_label">Workshop</p>
+              <p class="text-on-surface-variant text-sm sm:text-base" data-i18n="about_address">Drottningholmsvägen 300, 167 31 Bromma</p>
             </div>
           </div>
         </div>
@@ -477,9 +477,9 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-10 sm:mb-14 reveal">
-      <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 block">Schedule Appointment</span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-on-surface mb-2 sm:mb-3">Book Your Service</h2>
-      <p class="text-on-surface-variant text-sm sm:text-base max-w-md mx-auto">Select your preferred date, time, and provide your details. We'll confirm within one business day.</p>
+      <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 block" data-i18n="book_badge">Schedule Appointment</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-on-surface mb-2 sm:mb-3" data-i18n="book_heading">Book Your Service</h2>
+      <p class="text-on-surface-variant text-sm sm:text-base max-w-md mx-auto" data-i18n="book_sub">Select your preferred date, time, and provide your details. We'll confirm within one business day.</p>
     </div>
 
     <div class="bg-surface-container-lowest rounded-2xl border border-slate-200 shadow-sm overflow-hidden reveal">
@@ -488,29 +488,29 @@
         <!-- Left info panel -->
         <div class="lg:w-80 xl:w-96 bg-on-surface text-white p-6 sm:p-8 lg:p-10 flex flex-col gap-6 shrink-0">
           <div>
-            <h3 class="text-xl sm:text-2xl font-bold mb-1.5">Technical Diagnostics</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">A comprehensive vehicle assessment with our lead technician.</p>
+            <h3 class="text-xl sm:text-2xl font-bold mb-1.5" data-i18n="book_left_title">Technical Diagnostics</h3>
+            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="book_left_desc">A comprehensive vehicle assessment with our lead technician.</p>
           </div>
           <div class="space-y-4 sm:space-y-5">
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">schedule</span>
-              <div><p class="font-semibold text-sm">Duration</p><p class="text-slate-400 text-sm">60 &#8211; 90 minutes</p></div>
+              <div><p class="font-semibold text-sm" data-i18n="book_duration_label">Duration</p><p class="text-slate-400 text-sm" data-i18n="book_duration_val">60 – 90 minutes</p></div>
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">location_on</span>
-              <div><p class="font-semibold text-sm">Location</p><p class="text-slate-400 text-sm">Drottningholmsvägen 300, 167 31 Bromma</p></div>
+              <div><p class="font-semibold text-sm" data-i18n="book_location_label">Location</p><p class="text-slate-400 text-sm">Drottningholmsvägen 300, 167 31 Bromma</p></div>
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">verified</span>
-              <div><p class="font-semibold text-sm">Certification</p><p class="text-slate-400 text-sm">OEM Certified Technicians</p></div>
+              <div><p class="font-semibold text-sm" data-i18n="book_cert_label">Certification</p><p class="text-slate-400 text-sm" data-i18n="book_cert_val">OEM Certified Technicians</p></div>
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">phone_in_talk</span>
-              <div><p class="font-semibold text-sm">Call Us</p><a href="tel:+46793447833" class="text-[#dce1ff] text-sm hover:text-white transition-colors">+46 79-344 78 33</a></div>
+              <div><p class="font-semibold text-sm" data-i18n="book_call_label">Call Us</p><a href="tel:+46793447833" class="text-[#dce1ff] text-sm hover:text-white transition-colors">+46 79-344 78 33</a></div>
             </div>
           </div>
           <div class="mt-auto pt-5 border-t border-white/10">
-            <p class="text-xs text-slate-500 leading-relaxed">Mon &#8211; Fri: 08:00 &#8211; 17:00<br/>Weekends: Closed.<br/>Bookings confirmed by email within one business day.</p>
+            <p class="text-xs text-slate-500 leading-relaxed" data-i18n="book_hours">Mon – Fri: 08:00 – 17:00<br/>Weekends: Closed.<br/>Bookings confirmed by email within one business day.</p>
           </div>
         </div>
 
@@ -521,7 +521,7 @@
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">1</span>
-              <h3 class="font-bold text-base sm:text-lg">Select a Date</h3>
+              <h3 class="font-bold text-base sm:text-lg" data-i18n="book_step1">Select a Date</h3>
             </div>
             <div class="border border-outline-variant rounded-xl overflow-hidden">
               <div class="flex justify-between items-center px-4 sm:px-5 py-3 border-b border-outline-variant bg-surface-container-low">
@@ -550,7 +550,7 @@
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">2</span>
-              <h3 class="font-bold text-base sm:text-lg">Välj en eller flera tjänster</h3>
+              <h3 class="font-bold text-base sm:text-lg" data-i18n="book_step2">Välj en eller flera tjänster</h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="service-grid">
               <!-- rendered by JS -->
@@ -561,7 +561,7 @@
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">3</span>
-              <h3 class="font-bold text-base sm:text-lg">Choose a Time Slot</h3>
+              <h3 class="font-bold text-base sm:text-lg" data-i18n="book_step3">Choose a Time Slot</h3>
             </div>
             <div id="time-grid" class="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3"></div>
           </div>
@@ -570,51 +570,51 @@
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">4</span>
-              <h3 class="font-bold text-base sm:text-lg">Your Details</h3>
+              <h3 class="font-bold text-base sm:text-lg" data-i18n="book_step4">Your Details</h3>
             </div>
 
             <form id="booking-form" onsubmit="handleSubmit(event)" class="space-y-3 sm:space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label for="inp-name" class="block text-xs font-bold text-on-surface-variant mb-1.5">Full Name</label>
+                  <label for="inp-name" class="block text-xs font-bold text-on-surface-variant mb-1.5" data-i18n="book_label_name">Full Name</label>
                   <input id="inp-name" type="text" required autocomplete="name"
                     class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                    placeholder="e.g. Erik Andersson" />
+                    placeholder="e.g. Erik Andersson" data-i18n-ph="book_ph_name" />
                 </div>
                 <div>
-                  <label for="inp-phone" class="block text-xs font-bold text-on-surface-variant mb-1.5">Phone Number</label>
+                  <label for="inp-phone" class="block text-xs font-bold text-on-surface-variant mb-1.5" data-i18n="book_label_phone">Phone Number</label>
                   <input id="inp-phone" type="tel" required autocomplete="tel"
                     class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                    placeholder="+46 70 000 00 00" />
+                    placeholder="+46 70 000 00 00" data-i18n-ph="book_ph_phone" />
                 </div>
               </div>
               <div>
-                <label for="inp-email" class="block text-xs font-bold text-on-surface-variant mb-1.5">Email Address</label>
+                <label for="inp-email" class="block text-xs font-bold text-on-surface-variant mb-1.5" data-i18n="book_label_email">Email Address</label>
                 <input id="inp-email" type="email" required autocomplete="email"
                   class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                  placeholder="e.g. erik@example.com" />
+                  placeholder="e.g. erik@example.com" data-i18n-ph="book_ph_email" />
               </div>
               <div>
-                <label for="inp-reg" class="block text-xs font-bold text-on-surface-variant mb-1.5">
+                <label for="inp-reg" class="block text-xs font-bold text-on-surface-variant mb-1.5" data-i18n="book_label_reg">
                   Registration Number
                 </label>
                 <input id="inp-reg" type="text" required autocomplete="off"
                   class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all uppercase tracking-widest"
-                  placeholder="e.g. ABC 123"
+                  placeholder="e.g. ABC 123" data-i18n-ph="book_ph_reg"
                   oninput="this.value = this.value.toUpperCase()" />
               </div>
               <div>
-                <label for="inp-vehicle" class="block text-xs font-bold text-on-surface-variant mb-1.5">
+                <label for="inp-vehicle" class="block text-xs font-bold text-on-surface-variant mb-1.5" data-i18n="book_label_vehicle">
                   Vehicle &amp; Issue <span class="font-normal">(optional)</span>
                 </label>
                 <textarea id="inp-vehicle" rows="2" autocomplete="off"
                   class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
-                  placeholder="e.g. 2020 Volvo XC60 &#8212; engine warning light"></textarea>
+                  placeholder="e.g. 2020 Volvo XC60 &#8212; engine warning light" data-i18n-ph="book_ph_vehicle"></textarea>
               </div>
               <div id="form-error" class="hidden text-xs text-error bg-red-50 border border-red-200 rounded-lg px-4 py-3" role="alert"></div>
               <button id="submit-btn" type="submit"
                 class="w-full bg-primary hover:bg-primary-container text-white font-bold py-3.5 sm:py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2 group text-sm sm:text-base">
-                <span id="submit-label">Confirm Booking</span>
+                <span id="submit-label" data-i18n="book_submit">Confirm Booking</span>
                 <span id="submit-icon" class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
                 <svg id="submit-spinner" class="hidden animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -623,7 +623,7 @@
               </button>
               <p class="text-center text-xs text-slate-400 flex items-center justify-center gap-1.5">
                 <span class="material-symbols-outlined text-sm">mail</span>
-                A confirmation will be sent upon booking.
+                <span data-i18n="book_confirm_note">A confirmation will be sent upon booking.</span>
               </p>
             </form>
 
@@ -634,10 +634,10 @@
                   <path class="check-path" d="M9 19L16 26L29 12" stroke="#0043c8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-on-surface mb-2">Request Received!</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-on-surface mb-2" data-i18n="book_success_title">Request Received!</h3>
               <p id="success-msg" class="text-on-surface-variant text-sm max-w-xs mx-auto mb-2 leading-relaxed"></p>
-              <p class="text-on-surface-variant text-sm max-w-xs mx-auto mb-6 leading-relaxed">We'll review your booking and come back to you by email to confirm or suggest an alternative time.</p>
-              <button type="button" onclick="resetForm()" class="text-primary font-semibold text-sm hover:underline">
+              <p class="text-on-surface-variant text-sm max-w-xs mx-auto mb-6 leading-relaxed" data-i18n="book_success_note">We'll review your booking and come back to you by email to confirm or suggest an alternative time.</p>
+              <button type="button" onclick="resetForm()" class="text-primary font-semibold text-sm hover:underline" data-i18n="book_success_reset">
                 Book Another Appointment
               </button>
             </div>
@@ -659,33 +659,33 @@
     <div class="bg-surface-container rounded-2xl overflow-hidden flex flex-col md:flex-row border border-slate-200">
 
       <div class="w-full md:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-        <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 sm:mb-4 block reveal">Find Us</span>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 reveal">Located in Bromma</h2>
+        <span class="font-bold text-[10px] sm:text-xs text-primary uppercase tracking-widest mb-3 sm:mb-4 block reveal" data-i18n="contact_badge">Find Us</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 reveal" data-i18n="contact_heading">Located in Bromma</h2>
         <div class="space-y-4 sm:space-y-5 mb-8 sm:mb-10">
           <div class="flex gap-3 sm:gap-4 reveal">
             <span class="material-symbols-outlined text-primary text-xl shrink-0">location_on</span>
             <div>
-              <p class="font-semibold text-sm sm:text-base">Workshop Address</p>
+              <p class="font-semibold text-sm sm:text-base" data-i18n="contact_addr_label">Workshop Address</p>
               <p class="text-on-surface-variant text-sm">BrommaBilExperters Ab, Drottningholmsvägen 300, 167 31 Bromma</p>
             </div>
           </div>
           <div class="flex gap-3 sm:gap-4 reveal" style="transition-delay:.1s">
             <span class="material-symbols-outlined text-primary text-xl shrink-0">schedule</span>
             <div>
-              <p class="font-semibold text-sm sm:text-base">Opening Hours</p>
-              <p class="text-on-surface-variant text-sm">Mon &#8211; Fri: 08:00 &#8211; 17:00</p>
-              <p class="text-on-surface-variant text-sm">Weekends: Closed</p>
+              <p class="font-semibold text-sm sm:text-base" data-i18n="contact_hours_label">Opening Hours</p>
+              <p class="text-on-surface-variant text-sm" data-i18n="contact_hours_val">Mon – Fri: 08:00 – 17:00</p>
+              <p class="text-on-surface-variant text-sm" data-i18n="contact_hours_closed">Weekends: Closed</p>
             </div>
           </div>
           <div class="flex gap-3 sm:gap-4 reveal" style="transition-delay:.2s">
             <span class="material-symbols-outlined text-primary text-xl shrink-0">call</span>
             <div>
-              <p class="font-semibold text-sm sm:text-base">Phone</p>
+              <p class="font-semibold text-sm sm:text-base" data-i18n="contact_phone_label">Phone</p>
               <a href="tel:+46793447833" class="text-primary font-semibold hover:underline text-sm sm:text-base">+46 79-344 78 33</a>
             </div>
           </div>
         </div>
-        <a href="#" class="bg-on-surface text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-sm w-fit hover:opacity-90 transition-opacity">
+        <a href="#" class="bg-on-surface text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-sm w-fit hover:opacity-90 transition-opacity" data-i18n="contact_directions">
           Get Directions
         </a>
       </div>
@@ -711,14 +711,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-8">
     <div class="flex flex-col items-center md:items-start gap-1">
       <p class="text-base sm:text-lg font-extrabold text-slate-900 uppercase tracking-tight">Bil Expert Bromma</p>
-      <p class="text-xs sm:text-sm text-slate-500 text-center md:text-left">&#169; 2024 Bil Expert Bromma. Lead Technician: Muhammad Rumaan</p>
+      <p class="text-xs sm:text-sm text-slate-500 text-center md:text-left" data-i18n="footer_copy">&#169; 2026 Bil Expert Bromma. Lead Technician: Muhammad Rumaan</p>
       <a href="tel:+46793447833" class="text-primary text-xs sm:text-sm font-semibold">+46 79-344 78 33</a>
     </div>
     <div class="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6">
-      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#">Privacy Policy</a>
-      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#">Terms of Service</a>
-      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#">Workshop Standards</a>
-      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#">Support</a>
+      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#" data-i18n="footer_privacy">Privacy Policy</a>
+      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#" data-i18n="footer_terms">Terms of Service</a>
+      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#" data-i18n="footer_standards">Workshop Standards</a>
+      <a class="text-xs sm:text-sm text-slate-500 hover:text-slate-900 transition-all" href="#" data-i18n="footer_support">Support</a>
     </div>
   </div>
 </footer>
@@ -855,28 +855,30 @@
 
   /* ── Services ───────────────────────────────── */
   var SERVICES = [
-    "Felsökning",
-    "Welding / Rust",
-    "Däckbyte",
-    "Bil Service",
-    "Bromsbelägg och Bromsskiva",
-    "Bromsbelägg",
-    "Däckbyte och balansering",
-    "Kopplingssats",
-    "Kamkedja",
-    "Motorgenerator",
-    "Hjulinställning",
-    "Full bilservice",
-    "Andra"
+    { key: "felsökning",    en: "Diagnostics",               sv: "Felsökning" },
+    { key: "welding",       en: "Welding / Rust",             sv: "Svetsning / Rost" },
+    { key: "däckbyte",      en: "Tyre Change",                sv: "Däckbyte" },
+    { key: "bilservice",    en: "Car Service",                sv: "Bil Service" },
+    { key: "bromsset",      en: "Brake Pads & Disc",          sv: "Bromsbelägg och Bromsskiva" },
+    { key: "bromsbelägg",   en: "Brake Pads",                 sv: "Bromsbelägg" },
+    { key: "däckbalans",    en: "Tyre Change & Balancing",    sv: "Däckbyte och balansering" },
+    { key: "koppling",      en: "Clutch Kit",                 sv: "Kopplingssats" },
+    { key: "kamkedja",      en: "Timing Chain",               sv: "Kamkedja" },
+    { key: "generator",     en: "Alternator",                 sv: "Motorgenerator" },
+    { key: "hjulinst",      en: "Wheel Alignment",            sv: "Hjulinställning" },
+    { key: "fullservice",   en: "Full Car Service",           sv: "Full bilservice" },
+    { key: "andra",         en: "Other",                      sv: "Andra" }
   ];
-  var selServices = [];
+  var selServices = []; // stores keys
+  var currentLang = "en";
 
   function renderServices() {
     var grid = document.getElementById("service-grid");
     while (grid.firstChild) { grid.removeChild(grid.firstChild); }
 
-    SERVICES.forEach(function (name) {
-      var isActive = selServices.indexOf(name) !== -1;
+    SERVICES.forEach(function (svc) {
+      var isActive = selServices.indexOf(svc.key) !== -1;
+      var label_text = svc[currentLang] || svc.en;
 
       var btn = document.createElement("button");
       btn.type = "button";
@@ -895,16 +897,16 @@
       tick.appendChild(path);
       check.appendChild(tick);
 
-      var label = document.createElement("span");
-      label.textContent = name;
-      label.className = "text-sm font-medium " + (isActive ? "text-primary font-semibold" : "text-on-surface");
+      var lbl = document.createElement("span");
+      lbl.textContent = label_text;
+      lbl.className = "text-sm font-medium " + (isActive ? "text-primary font-semibold" : "text-on-surface");
 
       btn.appendChild(check);
-      btn.appendChild(label);
+      btn.appendChild(lbl);
 
       btn.addEventListener("click", function () {
-        var idx = selServices.indexOf(name);
-        if (idx === -1) { selServices.push(name); } else { selServices.splice(idx, 1); }
+        var idx = selServices.indexOf(svc.key);
+        if (idx === -1) { selServices.push(svc.key); } else { selServices.splice(idx, 1); }
         renderServices();
       });
 
@@ -1007,7 +1009,7 @@
       registration:   reg,
       booking_date:   dateStr,
       booking_time:   selTime,
-      services:       selServices.join(", "),
+      services:       selServices.map(function(k){ var s=SERVICES.find(function(x){return x.key===k;}); return s?(s[currentLang]||s.en):k; }).join(", "),
       notes:          notes || "–",
       reply_to:       email
     }).then(function () {
@@ -1043,29 +1045,203 @@
   /* ── i18n strings ────────────────────────────── */
   var STRINGS = {
     en: {
-      hero_badge:         "Established Expertise in Bromma",
-      hero_title:         "Your Car Deserves<br/>Expert Care.",
-      hero_sub:           "Fast, honest, and professional service in the heart of Bromma. Book online in seconds — we come back to confirm your slot.",
-      hero_cta_primary:   "Book Now",
-      hero_cta_secondary: "View Services",
-      nav_book:           "Book Service"
+      /* Nav */
+      nav_services:          "Services",
+      nav_about:             "About",
+      nav_book_link:         "Book",
+      nav_contact:           "Contact",
+      nav_book:              "Book Service",
+      /* Hero */
+      hero_badge:            "Established Expertise in Bromma",
+      hero_title:            "Your Car Deserves<br/>Expert Care.",
+      hero_sub:              "Fast, honest, and professional service in the heart of Bromma. Book online in seconds — we come back to confirm your slot.",
+      hero_cta_primary:      "Book Now",
+      hero_cta_secondary:    "View Services",
+      /* Stats */
+      stat_years:            "Years Experience",
+      stat_vehicles:         "Vehicles Serviced",
+      stat_rating:           "Customer Rating",
+      stat_oem:              "OEM Certified",
+      /* Services section */
+      svc_heading:           "Specialized Services",
+      svc_sub:               "Our workshop is calibrated for high-performance maintenance and technical diagnostics.",
+      svc_diag_title:        "Diagnostics",
+      svc_diag_desc:         "Advanced computer analysis to identify core issues with surgical accuracy before any work begins.",
+      svc_diag_1:            "ECU Programming",
+      svc_diag_2:            "Sensor Calibration",
+      svc_repair_title:      "Repair",
+      svc_repair_desc:       "Master technician-led mechanical repairs using OEM parts to ensure your vehicle's structural integrity.",
+      svc_repair_1:          "Engine Overhaul",
+      svc_repair_2:          "Brake Systems",
+      svc_maint_title:       "Maintenance",
+      svc_maint_desc:        "Preventative care schedules designed to maximize vehicle longevity and maintain manufacturer warranties.",
+      svc_maint_1:           "Seasonal Service",
+      svc_maint_2:           "Fluid Optimization",
+      /* About section */
+      about_badge:           "Our Foundation",
+      about_heading:         "Guided by Mastery",
+      about_body:            "Bil Expert Bromma was founded on the principle that transparency is the most important tool in a workshop. Under the leadership of <strong class=\"text-on-surface\">Muhammad Rumaan</strong>, we've built a reputation for solving the unsolvable.",
+      about_tech:            "Lead Technician",
+      about_tech_name:       "Muhammad Rumaan",
+      about_phone_label:     "Direct Line",
+      about_address_label:   "Workshop",
+      about_address:         "Drottningholmsvägen 300, 167 31 Bromma",
+      /* Booking section */
+      book_badge:            "Schedule Appointment",
+      book_heading:          "Book Your Service",
+      book_sub:              "Select your preferred date, time, and provide your details. We'll confirm within one business day.",
+      book_left_title:       "Technical Diagnostics",
+      book_left_desc:        "A comprehensive vehicle assessment with our lead technician.",
+      book_duration_label:   "Duration",
+      book_duration_val:     "60 – 90 minutes",
+      book_location_label:   "Location",
+      book_cert_label:       "Certification",
+      book_cert_val:         "OEM Certified Technicians",
+      book_call_label:       "Call Us",
+      book_hours:            "Mon – Fri: 08:00 – 17:00<br/>Weekends: Closed.<br/>Bookings confirmed by email within one business day.",
+      book_step1:            "Select a Date",
+      book_step2:            "Välj en eller flera tjänster",
+      book_step3:            "Choose a Time Slot",
+      book_step4:            "Your Details",
+      book_label_name:       "Full Name",
+      book_ph_name:          "e.g. Erik Andersson",
+      book_label_email:      "Email Address",
+      book_ph_email:         "e.g. erik@example.com",
+      book_label_phone:      "Phone Number",
+      book_ph_phone:         "+46 70 000 00 00",
+      book_label_reg:        "Registration Number",
+      book_ph_reg:           "e.g. ABC 123",
+      book_label_vehicle:    "Vehicle & Issue <span class=\"font-normal\">(optional)</span>",
+      book_ph_vehicle:       "e.g. 2020 Volvo XC60 — engine warning light",
+      book_submit:           "Confirm Booking",
+      book_confirm_note:     "A confirmation will be sent upon booking.",
+      book_success_title:    "Request Received!",
+      book_success_note:     "We'll review your booking and come back to you by email to confirm or suggest an alternative time.",
+      book_success_reset:    "Book Another Appointment",
+      /* Contact section */
+      contact_badge:         "Find Us",
+      contact_heading:       "Located in Bromma",
+      contact_addr_label:    "Workshop Address",
+      contact_hours_label:   "Opening Hours",
+      contact_hours_val:     "Mon – Fri: 08:00 – 17:00",
+      contact_hours_closed:  "Weekends: Closed",
+      contact_phone_label:   "Phone",
+      contact_directions:    "Get Directions",
+      /* Footer */
+      footer_copy:           "© 2026 Bil Expert Bromma. Lead Technician: Muhammad Rumaan",
+      footer_privacy:        "Privacy Policy",
+      footer_terms:          "Terms of Service",
+      footer_standards:      "Workshop Standards",
+      footer_support:        "Support"
     },
     sv: {
-      hero_badge:         "Gedigen Expertis i Bromma",
-      hero_title:         "Din Bil Förtjänar<br/>Experthjälp.",
-      hero_sub:           "Snabb, ärlig och professionell service i hjärtat av Bromma. Boka online på sekunder — vi återkommer för att bekräfta din tid.",
-      hero_cta_primary:   "Boka Nu",
-      hero_cta_secondary: "Visa Tjänster",
-      nav_book:           "Boka Service"
+      /* Nav */
+      nav_services:          "Tjänster",
+      nav_about:             "Om oss",
+      nav_book_link:         "Boka",
+      nav_contact:           "Kontakt",
+      nav_book:              "Boka Service",
+      /* Hero */
+      hero_badge:            "Gedigen Expertis i Bromma",
+      hero_title:            "Din Bil Förtjänar<br/>Experthjälp.",
+      hero_sub:              "Snabb, ärlig och professionell service i hjärtat av Bromma. Boka online på sekunder — vi återkommer för att bekräfta din tid.",
+      hero_cta_primary:      "Boka Nu",
+      hero_cta_secondary:    "Visa Tjänster",
+      /* Stats */
+      stat_years:            "Års Erfarenhet",
+      stat_vehicles:         "Fordon Servade",
+      stat_rating:           "Kundbetyg",
+      stat_oem:              "OEM-certifierat",
+      /* Services section */
+      svc_heading:           "Specialiserade Tjänster",
+      svc_sub:               "Vår verkstad är kalibrerad för högpresterande underhåll och teknisk diagnostik.",
+      svc_diag_title:        "Diagnostik",
+      svc_diag_desc:         "Avancerad datoranalys för att identifiera kärnproblem med kirurgisk precision innan något arbete påbörjas.",
+      svc_diag_1:            "ECU-programmering",
+      svc_diag_2:            "Sensorkalibrering",
+      svc_repair_title:      "Reparation",
+      svc_repair_desc:       "Mekaniska reparationer ledda av mästermontörer med OEM-delar för att säkerställa fordonets strukturella integritet.",
+      svc_repair_1:          "Motoröversyn",
+      svc_repair_2:          "Bromssystem",
+      svc_maint_title:       "Underhåll",
+      svc_maint_desc:        "Förebyggande servicescheman utformade för att maximera fordonets livslängd och bevara tillverkargarantier.",
+      svc_maint_1:           "Säsongservice",
+      svc_maint_2:           "Vätskeoptimering",
+      /* About section */
+      about_badge:           "Vår Grund",
+      about_heading:         "Driven av Mästerskap",
+      about_body:            "Bil Expert Bromma grundades på principen att transparens är det viktigaste verktyget i en verkstad. Under ledning av <strong class=\"text-on-surface\">Muhammad Rumaan</strong> har vi byggt upp ett rykte för att lösa det olösliga.",
+      about_tech:            "Huvudtekniker",
+      about_tech_name:       "Muhammad Rumaan",
+      about_phone_label:     "Direktlinje",
+      about_address_label:   "Verkstad",
+      about_address:         "Drottningholmsvägen 300, 167 31 Bromma",
+      /* Booking section */
+      book_badge:            "Boka tid",
+      book_heading:          "Boka Din Service",
+      book_sub:              "Välj önskat datum, tid och ange dina uppgifter. Vi bekräftar inom en arbetsdag.",
+      book_left_title:       "Teknisk Diagnostik",
+      book_left_desc:        "En komplett fordonsbedömning med vår huvudtekniker.",
+      book_duration_label:   "Varaktighet",
+      book_duration_val:     "60 – 90 minuter",
+      book_location_label:   "Plats",
+      book_cert_label:       "Certifiering",
+      book_cert_val:         "OEM-certifierade tekniker",
+      book_call_label:       "Ring oss",
+      book_hours:            "Mån – Fre: 08:00 – 17:00<br/>Helger: Stängt.<br/>Bokningar bekräftas via e-post inom en arbetsdag.",
+      book_step1:            "Välj ett datum",
+      book_step2:            "Välj en eller flera tjänster",
+      book_step3:            "Välj en tid",
+      book_step4:            "Dina uppgifter",
+      book_label_name:       "Fullständigt namn",
+      book_ph_name:          "t.ex. Erik Andersson",
+      book_label_email:      "E-postadress",
+      book_ph_email:         "t.ex. erik@exempel.com",
+      book_label_phone:      "Telefonnummer",
+      book_ph_phone:         "+46 70 000 00 00",
+      book_label_reg:        "Registreringsnummer",
+      book_ph_reg:           "t.ex. ABC 123",
+      book_label_vehicle:    "Fordon & Problem <span class=\"font-normal\">(valfritt)</span>",
+      book_ph_vehicle:       "t.ex. Volvo XC60 2020 — motorvarningslampa",
+      book_submit:           "Bekräfta Bokning",
+      book_confirm_note:     "En bekräftelse skickas när bokningen är mottagen.",
+      book_success_title:    "Förfrågan mottagen!",
+      book_success_note:     "Vi granskar din bokning och återkommer via e-post för att bekräfta eller föreslå en alternativ tid.",
+      book_success_reset:    "Boka en ny tid",
+      /* Contact section */
+      contact_badge:         "Hitta oss",
+      contact_heading:       "Vi finns i Bromma",
+      contact_addr_label:    "Verkstadens adress",
+      contact_hours_label:   "Öppettider",
+      contact_hours_val:     "Mån – Fre: 08:00 – 17:00",
+      contact_hours_closed:  "Helger: Stängt",
+      contact_phone_label:   "Telefon",
+      contact_directions:    "Vägbeskrivning",
+      /* Footer */
+      footer_copy:           "© 2026 Bil Expert Bromma. Huvudtekniker: Muhammad Rumaan",
+      footer_privacy:        "Integritetspolicy",
+      footer_terms:          "Användarvillkor",
+      footer_standards:      "Verkstadsstandarder",
+      footer_support:        "Support"
     }
   };
 
   function applyLang(lang) {
+    currentLang = lang;
     var s = STRINGS[lang] || STRINGS.en;
+
+    // innerHTML keys
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       if (s[key] !== undefined) el.innerHTML = s[key];
     });
+
+    // placeholder keys
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-ph");
+      if (s[key] !== undefined) el.placeholder = s[key];
+    });
+
     // update lang button
     var isEn = lang === "en";
     document.getElementById("lang-flag").textContent = isEn ? "🇬🇧" : "🇸🇪";
@@ -1075,6 +1251,9 @@
     });
     document.documentElement.lang = lang;
     try { localStorage.setItem("bil_lang", lang); } catch(e) {}
+
+    // re-render dynamic components
+    renderServices();
   }
 
   /* ── Language switcher ───────────────────────── */
