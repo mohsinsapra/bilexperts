@@ -443,6 +443,15 @@
                 </div>
               </div>
               <div>
+                <label for="inp-reg" class="block text-xs font-bold text-on-surface-variant mb-1.5">
+                  Registration Number
+                </label>
+                <input id="inp-reg" type="text" required autocomplete="off"
+                  class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all uppercase tracking-widest"
+                  placeholder="e.g. ABC 123"
+                  oninput="this.value = this.value.toUpperCase()" />
+              </div>
+              <div>
                 <label for="inp-vehicle" class="block text-xs font-bold text-on-surface-variant mb-1.5">
                   Vehicle &amp; Issue <span class="font-normal">(optional)</span>
                 </label>
@@ -709,6 +718,7 @@
     e.preventDefault();
     var name  = document.getElementById("inp-name").value.trim();
     var phone = document.getElementById("inp-phone").value.trim();
+    var reg   = document.getElementById("inp-reg").value.trim();
     var err   = document.getElementById("form-error");
 
     if (!selDate) {
@@ -721,6 +731,11 @@
       err.classList.remove("hidden");
       return;
     }
+    if (!reg) {
+      err.textContent = "Please enter your vehicle registration number.";
+      err.classList.remove("hidden");
+      return;
+    }
     err.classList.add("hidden");
 
     var dateStr = selDate.toLocaleDateString("en-GB", {
@@ -728,7 +743,7 @@
     });
 
     var msg = name + ", your appointment is set for " + dateStr + " at " + selTime +
-              ". We’ll contact you at " + phone + " to confirm.";
+              " for vehicle " + reg + ". We’ll contact you at " + phone + " to confirm.";
     document.getElementById("success-msg").textContent = msg;
 
     document.getElementById("booking-form").classList.add("hidden");
@@ -740,6 +755,7 @@
     selTime = null;
     document.getElementById("inp-name").value    = "";
     document.getElementById("inp-phone").value   = "";
+    document.getElementById("inp-reg").value     = "";
     document.getElementById("inp-vehicle").value = "";
     document.getElementById("booking-form").classList.remove("hidden");
     document.getElementById("booking-success").classList.add("hidden");
