@@ -85,6 +85,14 @@
     .cal-cell.selected         { background: #0043c8 !important; color: #fff !important; font-weight: 700; }
     .cal-cell.muted            { color: #c3c5d9; }
 
+    /* ── Service cards ────────────────────── */
+    .svc-card { transition: border-color 0.15s, background 0.15s; cursor: pointer; }
+    .svc-card.active { border-color: #0043c8; background: rgba(220,225,255,0.3); }
+    .svc-card.active .svc-check { background: #0043c8; border-color: #0043c8; }
+    .svc-card.active .svc-check svg { display: block; }
+    .svc-check { width: 18px; height: 18px; border: 2px solid #c3c5d9; border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+    .svc-check svg { display: none; }
+
     /* ── Time slots ───────────────────────── */
     .t-slot { transition: border-color 0.15s, background 0.15s; cursor: pointer; }
     .t-slot.active             { border-color: #0043c8; background: rgba(220,225,255,0.35); }
@@ -150,7 +158,7 @@
       <a href="#booking"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">Book Service</a>
       <a href="#contact"  onclick="closeMob()" class="px-4 py-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:text-blue-600 transition-all text-sm">Contact</a>
       <div class="mt-2 pt-3 border-t border-slate-100 px-4">
-        <p class="text-xs text-slate-500">Muhammad Roman</p>
+        <p class="text-xs text-slate-500">Muhammad Ruman</p>
         <a href="tel:+46793447833" class="text-primary font-semibold text-sm">+46 79-344 78 33</a>
       </div>
     </div>
@@ -283,7 +291,7 @@
           <img
             class="w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYu0La2s-0D6f5rhplaMccalTgI2TfSQ-YNmk6k829CgDzLTdnWjL-L-tDEdmWngiLYgKhoq7cjtA8HuT-eQBmkEkz9Fjlc3bBGmdh_FUlk2GbhHhNqulSjyKziFbTzrKzClQcxcMb-cJnfYl5jnvi-_K9OFf4_-Hjn_ktmDRo5iSZeBHKFnJDPC7M_bIDOZ9P4CiTvbawZvwurMNV8a-a2Ok_92lWthSgJdY-qacETMkP-u6hwxig2wDv0sKEyOi_3di5YPEKWoZ4"
-            alt="Muhammad Roman, Lead Technician"
+            alt="Muhammad Ruman, Lead Technician"
           />
         </div>
         <div class="absolute -bottom-5 right-2 sm:-bottom-8 sm:-right-4 lg:-right-8 bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-slate-100 max-w-[190px] sm:max-w-xs">
@@ -297,7 +305,7 @@
         <h2 class="text-3xl sm:text-4xl font-bold mb-5 sm:mb-7">Guided by Mastery</h2>
         <p class="text-base sm:text-lg text-on-surface-variant mb-6 sm:mb-8 leading-relaxed">
           Bil Expert Bromma was founded on the principle that transparency is the most important tool in a workshop.
-          Under the leadership of <strong class="text-on-surface">Muhammad Roman</strong>, we've built a reputation for solving the unsolvable.
+          Under the leadership of <strong class="text-on-surface">Muhammad Ruman</strong>, we've built a reputation for solving the unsolvable.
         </p>
         <div class="space-y-4 sm:space-y-5">
           <div class="flex items-start gap-4">
@@ -306,7 +314,7 @@
             </div>
             <div>
               <p class="font-semibold text-sm text-on-surface">Lead Technician</p>
-              <p class="text-on-surface-variant text-sm sm:text-base">Muhammad Roman</p>
+              <p class="text-on-surface-variant text-sm sm:text-base">Muhammad Ruman</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -324,7 +332,7 @@
             </div>
             <div>
               <p class="font-semibold text-sm text-on-surface">Workshop</p>
-              <p class="text-on-surface-variant text-sm sm:text-base">Bromma Business Park, Stockholm</p>
+              <p class="text-on-surface-variant text-sm sm:text-base">Drottningholmsvägen 300, 167 31 Bromma</p>
             </div>
           </div>
         </div>
@@ -363,7 +371,7 @@
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">location_on</span>
-              <div><p class="font-semibold text-sm">Location</p><p class="text-slate-400 text-sm">Bromma Business Park, Stockholm</p></div>
+              <div><p class="font-semibold text-sm">Location</p><p class="text-slate-400 text-sm">Drottningholmsvägen 300, 167 31 Bromma</p></div>
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-[#dce1ff] text-xl shrink-0">verified</span>
@@ -411,19 +419,30 @@
             </div>
           </div>
 
-          <!-- Step 2 -->
+          <!-- Step 2: Services -->
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">2</span>
-              <h3 class="font-bold text-base sm:text-lg">Choose a Time Slot</h3>
+              <h3 class="font-bold text-base sm:text-lg">Välj en eller flera tjänster</h3>
             </div>
-            <div id="time-grid" class="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="service-grid">
+              <!-- rendered by JS -->
+            </div>
           </div>
 
           <!-- Step 3 -->
           <div>
             <div class="flex items-center gap-2.5 mb-4">
               <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">3</span>
+              <h3 class="font-bold text-base sm:text-lg">Choose a Time Slot</h3>
+            </div>
+            <div id="time-grid" class="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div>
+            <div class="flex items-center gap-2.5 mb-4">
+              <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">4</span>
               <h3 class="font-bold text-base sm:text-lg">Your Details</h3>
             </div>
 
@@ -509,7 +528,7 @@
             <span class="material-symbols-outlined text-primary text-xl shrink-0">location_on</span>
             <div>
               <p class="font-semibold text-sm sm:text-base">Workshop Address</p>
-              <p class="text-on-surface-variant text-sm">Bromma Business Park, Stockholm, Sweden</p>
+              <p class="text-on-surface-variant text-sm">BrommaBilExperters Ab, Drottningholmsvägen 300, 167 31 Bromma</p>
             </div>
           </div>
           <div class="flex gap-3 sm:gap-4 reveal" style="transition-delay:.1s">
@@ -554,7 +573,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-8">
     <div class="flex flex-col items-center md:items-start gap-1">
       <p class="text-base sm:text-lg font-extrabold text-slate-900 uppercase tracking-tight">Bil Expert Bromma</p>
-      <p class="text-xs sm:text-sm text-slate-500 text-center md:text-left">&#169; 2024 Bil Expert Bromma. Lead Technician: Muhammad Roman</p>
+      <p class="text-xs sm:text-sm text-slate-500 text-center md:text-left">&#169; 2024 Bil Expert Bromma. Lead Technician: Muhammad Ruman</p>
       <a href="tel:+46793447833" class="text-primary text-xs sm:text-sm font-semibold">+46 79-344 78 33</a>
     </div>
     <div class="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6">
@@ -675,6 +694,65 @@
     viewDate.setMonth(viewDate.getMonth() + 1); renderCal();
   });
 
+  /* ── Services ───────────────────────────────── */
+  var SERVICES = [
+    "Felsökning",
+    "Welding / Rust",
+    "Däckbyte",
+    "Bil Service",
+    "Bromsbelägg och Bromsskiva",
+    "Bromsbelägg",
+    "Däckbyte och balansering",
+    "Kopplingssats",
+    "Kamkedja",
+    "Motorgenerator",
+    "Hjulinställning",
+    "Full bilservice",
+    "Andra"
+  ];
+  var selServices = [];
+
+  function renderServices() {
+    var grid = document.getElementById("service-grid");
+    while (grid.firstChild) { grid.removeChild(grid.firstChild); }
+
+    SERVICES.forEach(function (name) {
+      var isActive = selServices.indexOf(name) !== -1;
+
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "svc-card flex items-center gap-3 px-4 py-3 border rounded-xl text-left " +
+        (isActive ? "active border-primary" : "border-outline-variant hover:border-primary/40 hover:bg-surface-container");
+
+      var check = document.createElement("span");
+      check.className = "svc-check";
+      var tick = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      tick.setAttribute("width", "10"); tick.setAttribute("height", "10");
+      tick.setAttribute("viewBox", "0 0 10 10"); tick.setAttribute("fill", "none");
+      var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", "M1.5 5L4 7.5L8.5 2.5");
+      path.setAttribute("stroke", "white"); path.setAttribute("stroke-width", "1.8");
+      path.setAttribute("stroke-linecap", "round"); path.setAttribute("stroke-linejoin", "round");
+      tick.appendChild(path);
+      check.appendChild(tick);
+
+      var label = document.createElement("span");
+      label.textContent = name;
+      label.className = "text-sm font-medium " + (isActive ? "text-primary font-semibold" : "text-on-surface");
+
+      btn.appendChild(check);
+      btn.appendChild(label);
+
+      btn.addEventListener("click", function () {
+        var idx = selServices.indexOf(name);
+        if (idx === -1) { selServices.push(name); } else { selServices.splice(idx, 1); }
+        renderServices();
+      });
+
+      grid.appendChild(btn);
+    });
+  }
+
   /* ── Time slots ──────────────────────────────── */
   var SLOTS = [
     { time: "08:00", label: "Morning"   },
@@ -726,6 +804,11 @@
       err.classList.remove("hidden");
       return;
     }
+    if (selServices.length === 0) {
+      err.textContent = "Please select at least one service.";
+      err.classList.remove("hidden");
+      return;
+    }
     if (!selTime) {
       err.textContent = "Please choose a time slot.";
       err.classList.remove("hidden");
@@ -743,7 +826,8 @@
     });
 
     var msg = name + ", your appointment is set for " + dateStr + " at " + selTime +
-              " for vehicle " + reg + ". We’ll contact you at " + phone + " to confirm.";
+              ". Services: " + selServices.join(", ") + ". Vehicle: " + reg +
+              ". We’ll contact you at " + phone + " to confirm.";
     document.getElementById("success-msg").textContent = msg;
 
     document.getElementById("booking-form").classList.add("hidden");
@@ -757,14 +841,17 @@
     document.getElementById("inp-phone").value   = "";
     document.getElementById("inp-reg").value     = "";
     document.getElementById("inp-vehicle").value = "";
+    selServices = [];
     document.getElementById("booking-form").classList.remove("hidden");
     document.getElementById("booking-success").classList.add("hidden");
     renderCal();
+    renderServices();
     renderSlots();
   };
 
   /* ── Init ────────────────────────────────────── */
   renderCal();
+  renderServices();
   renderSlots();
 }());
 </script>
