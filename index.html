@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -803,12 +802,9 @@
     });
   }
 
-  /* ── EmailJS ─────────────────────────────────── */
-  // ⚠️  SETUP REQUIRED — see instructions below
-  var EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // from emailjs.com → Account → Public Key
-  var EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // from emailjs.com → Email Services
-  var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // from emailjs.com → Email Templates
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  /* ── Gmail SMTP via Google Apps Script ──────────── */
+  // ⚠️  Paste your deployed Web App URL here (see Code.gs for setup steps)
+  var GAS_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
 
   /* ── Form submit ─────────────────────────────── */
   window.handleSubmit = function (e) {
@@ -852,42 +848,20 @@
     icon.classList.add("hidden");
     spinner.classList.remove("hidden");
 
-    // Build accept / suggest-time mailto links for the email Roman receives
-    var acceptBody = encodeURIComponent(
-      "Hej " + name + ",\n\n" +
-      "Tack för din bokning! Vi bekräftar härmed din tid:\n\n" +
-      "Datum: " + dateStr + "\n" +
-      "Tid: " + selTime + "\n" +
-      "Tjänster: " + selServices.join(", ") + "\n" +
-      "Registreringsnummer: " + reg + "\n\n" +
-      "Vi ses!\n\n" +
-      "Med vänliga hälsningar,\nMuhammad Rumaan\nBil Expert Bromma\n" +
-      "Drottningholmsvägen 300, 167 31 Bromma\n+46 79-344 78 33"
-    );
-    var suggestBody = encodeURIComponent(
-      "Hej " + name + ",\n\n" +
-      "Tack för din bokning! Tyvärr är din önskade tid inte tillgänglig.\n\n" +
-      "Vi kan erbjuda dig följande alternativa tid:\n" +
-      "Datum: [ANGE DATUM]\nTid: [ANGE TID]\n\n" +
-      "Vänligen bekräfta om detta passar dig.\n\n" +
-      "Med vänliga hälsningar,\nMuhammad Rumaan\nBil Expert Bromma\n" +
-      "Drottningholmsvägen 300, 167 31 Bromma\n+46 79-344 78 33"
-    );
-    var acceptLink  = "mailto:" + email + "?subject=" + encodeURIComponent("✅ Booking Confirmed – " + dateStr + " at " + selTime) + "&body=" + acceptBody;
-    var suggestLink = "mailto:" + email + "?subject=" + encodeURIComponent("🔄 Alternative Booking Time – Bil Expert Bromma") + "&body=" + suggestBody;
-
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      customer_name:  name,
-      customer_email: email,
-      customer_phone: phone,
-      registration:   reg,
-      booking_date:   dateStr,
-      booking_time:   selTime,
-      services:       selServices.join(", "),
-      notes:          notes || "–",
-      accept_link:    acceptLink,
-      suggest_link:   suggestLink,
-      reply_to:       email
+    // POST to Google Apps Script → sends via Gmail SMTP
+    fetch(GAS_URL, {
+      method: "POST",
+      mode:   "no-cors",  // GAS uses an internal redirect; no-cors lets it through
+      body:   JSON.stringify({
+        customer_name:  name,
+        customer_email: email,
+        customer_phone: phone,
+        registration:   reg,
+        booking_date:   dateStr,
+        booking_time:   selTime,
+        services:       selServices.join(", "),
+        notes:          notes || "–"
+      })
     }).then(function () {
       document.getElementById("success-msg").textContent =
         name + ", your request for " + dateStr + " at " + selTime + " has been received.";
