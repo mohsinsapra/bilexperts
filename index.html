@@ -1042,6 +1042,18 @@
       notes:          notes || "–",
       reply_to:       email
     }).then(function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "booking_success",
+        booking_date: dateStr,
+        booking_time: selTime,
+        booking_services: selServices.map(function(k){
+          var s = SERVICES.find(function(x){ return x.key === k; });
+          return s ? (s[currentLang] || s.en) : k;
+        }).join(", "),
+        vehicle_registration: reg
+      });
+
       document.getElementById("success-msg").textContent =
         name + ", your request for " + dateStr + " at " + selTime + " has been received.";
       document.getElementById("booking-form").classList.add("hidden");
